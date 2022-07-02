@@ -9,7 +9,7 @@ function NavSideBar() {
                 <a className="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">
                     <img src={Logo} alt="" width="150" height="57" />
                 </a>
-                <button className="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler position-absolute d-md-none collapsed mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
             </header>
@@ -17,14 +17,6 @@ function NavSideBar() {
             <div className="container-fluid">
                 <div className="row">
                     <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                    <div className="input-group w-20 px-1">
-                        <input className="form-control-search" type="text" placeholder="Search for..." aria-label="Search for..."
-                                aria-describedby="btnNavbarSearch"
-                        />
-                        <button className="btn btn-success" id="btnNavbarSearch" type="button">
-                                <i className="bi bi-search"></i>
-                        </button>
-                    </div>
                     <div className="position-sticky pt-5">
                         <ul className="nav flex-column">
                         {/* <li className="nav-item">
@@ -122,6 +114,14 @@ function NavSideBar() {
                         </li>
                         </ul>
                     </div>
+                    {/* <div className="input-group w-15 px-1">
+                        <input className="form-control-search" type="text" placeholder="Search for..." aria-label="Search for..."
+                                aria-describedby="btnNavbarSearch"
+                        />
+                        <button className="btn btn-success" id="btnNavbarSearch" type="button">
+                                <i className="bi bi-search"></i>
+                        </button>
+                    </div> */}
                     </nav>
                 </div>
                 <footer className="py-2 fixed-bottom bg-light mt-auto">

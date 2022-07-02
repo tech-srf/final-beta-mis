@@ -94,10 +94,10 @@ function Register() {
                                 <form onSubmit={handleSubmit}>
                                 <div className="card shadow-sm mb-4">
                                     <div class="row g-0">
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                         <img className="img pt-5 mb-3" width="75%" src={Image} alt="" />
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-6">
                                         <div class="card-body">
                                             <h5 class="card-title">Players Name</h5>
                                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -1120,6 +1120,30 @@ function Register() {
                                             placeholder="Give necessary recommendations" 
                                         />
                                     </div>
+                                    <div className="card shadow-sm mb-4">
+                                    <div>
+                                        <div clasNames="card-body">
+                                            <p className="card-text mt-4">
+                                                SRF has a duty of care for the children and will be responsible to ensure child safety
+                                                and cover medical cost related to rugby injuries.
+                                            </p>
+                                            <strong>
+                                                Required documents for registration.
+                                            </strong>
+                                            <ul>
+                                                <li>Copy of child birth certificate.</li>
+                                                <li>Copy of parents/guardian id.</li>
+                                                <li>Passport size photo.</li>
+                                                <li>Exam results copy.</li>
+                                            </ul>
+                                            <div className="form-group row pt-2">
+                                                <div className="col-sm-4">
+                                                    <button type="submit" className="btn btn-success mb-4">Upload</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                     <div className="buttons">
                                         <button type="submit" disabled={submitting || pristine}>
                                                 Submit
