@@ -615,16 +615,16 @@ function Register() {
                                                 ))
                                                 }
                                                 </FieldArray> 
-                                            <div className="buttons">
-                                            <button className="buttons mt-3"
-                                                type="button"
+                                            <div className="button">
+                                            <button className="button mt-3"
+                                                type="submit"
                                                 onClick={() => push('contributor', undefined)}
                                             >
                                                 Add Contributor
                                             </button>
                                             <br/>
-                                            <button className="buttons mt-3" 
-                                                type="button" 
+                                            <button className="button mt-3" 
+                                                type="submit" 
                                                 onClick={() => pop('contributor')}>
                                                 Remove Contributor
                                             </button>
@@ -758,15 +758,15 @@ function Register() {
                                             }
                                             </FieldArray>
                                             <div>
-                                            <button className="buttons mt-3"
-                                                type="button"
+                                            <button className="button mt-3"
+                                                type="submit"
                                                 onClick={() => push('family', undefined)}
                                             >
                                                 Add Family Member
                                             </button>
                                             <br/>
-                                            <button className="buttons mt-3"
-                                                type="button" onClick={() => pop('family')}>
+                                            <button className="button mt-3"
+                                                type="submit" onClick={() => pop('family')}>
                                                 Remove Family Member
                                             </button>
                                             </div>
@@ -998,16 +998,16 @@ function Register() {
                                                 ))
                                             }
                                             </FieldArray>
-                                                <div className="buttons">
-                                                    <button className="buttons mt-3"
-                                                        type="button"
+                                                <div className="button">
+                                                    <button className="mt-3"
+                                                        type="submit"
                                                         onClick={() => push('beneficiary', undefined)}
                                                     >
                                                         Add Beneficiary
                                                     </button>
                                                     <br/>
-                                                    <button className="buttons mt-3"
-                                                        type="button" onClick={() => pop('beneficiary')}>
+                                                    <button className="mt-3"
+                                                        type="submit" onClick={() => pop('beneficiary')}>
                                                         Remove Beneficiary
                                                     </button>
                                                 </div>
@@ -1047,7 +1047,7 @@ function Register() {
                                             />
                                             <Error name="visitDate" />
                                         </div>
-                                        <div className="buttons">
+                                        <div className="button mt-3">
                                             <button type="submit" disabled={submitting || pristine}>
                                                 Signature
                                             </button>
@@ -1128,7 +1128,7 @@ function Register() {
                                                 and cover medical cost related to rugby injuries.
                                             </p>
                                             <strong>
-                                                Required documents for registration.
+                                                Required documents for registration. <br/> Take a picture of the following items
                                             </strong>
                                             <ul>
                                                 <li>Copy of child birth certificate.</li>
@@ -1144,7 +1144,7 @@ function Register() {
                                         </div>
                                     </div>
                                 </div>
-                                    <div className="buttons">
+                                    <div className="button">
                                         <button type="submit" disabled={submitting || pristine}>
                                                 Submit
                                         </button>
