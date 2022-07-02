@@ -12,24 +12,19 @@ function NavSideBar() {
                 <button className="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="input-group w-50 px-5">
-                    <input className="form-control-search" type="text" placeholder="Search for..." aria-label="Search for..."
-                            aria-describedby="btnNavbarSearch"
-                    />
-                        <button className="btn btn-success" id="btnNavbarSearch" type="button">
-                                <i className="bi bi-search"></i>
-                        </button>
-                </div>
-                <div className="navbar-nav">
-                    <div className="nav-item text-nowrap">
-                    <a className="nav-link px-3" href="/login">Sign out</a>
-                    </div>
-                </div>
             </header>
 
             <div className="container-fluid">
                 <div className="row">
                     <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                    <div className="input-group w-20 px-1">
+                        <input className="form-control-search" type="text" placeholder="Search for..." aria-label="Search for..."
+                                aria-describedby="btnNavbarSearch"
+                        />
+                        <button className="btn btn-success" id="btnNavbarSearch" type="button">
+                                <i className="bi bi-search"></i>
+                        </button>
+                    </div>
                     <div className="position-sticky pt-5">
                         <ul className="nav flex-column">
                         {/* <li className="nav-item">
@@ -116,6 +111,13 @@ function NavSideBar() {
                             <span data-feather="file-text"></span>
                             <i className="bi bi-file-earmark-lock2 text-success px-3"></i>
                             Admin
+                            </a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="login">
+                            <span data-feather="file-text"></span>
+                            <i className="bi bi-file-earmark-lock2 text-success px-3"></i>
+                            Log Out
                             </a>
                         </li>
                         </ul>

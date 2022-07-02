@@ -76,15 +76,6 @@ function Register() {
             <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h3 className="h3 text-success">Register</h3>
-                    <div className="btn-toolbar mb-2 mb-md-0">
-                    <div className="btn-group me-2">
-                        <button type="button" className="btn btn-sm btn-outline-success px-4">Edit</button>
-                    </div>
-                        <button type="button" className="btn btn-sm btn-outline-success px-4">
-                                <span data-feather="calendar"></span>
-                                Save
-                        </button>
-                    </div>
                 </div>
                 <div className="row">
                     <div className="col">
@@ -128,59 +119,61 @@ function Register() {
                                         <Error name="schoolName" />
                                     </div>
                                     <label>Select one</label>
-                                    <div className="mb-3">
-                                        <div custom-control custom-checkbox custom-control-inline>
-                                            <Field
-                                                name="academicLevel"
-                                                component="input"
-                                                type="checkbox"
-                                                value="class"
-                                                className="custom-control-input"
-                                                id="class"
-                                            />{' '}
-                                            <label className="custom-control-label" htmlFor="class">
-                                                Class
-                                            </label>
-                                                <Error name="class" />
-                                        </div>
-                                        <div custom-control custom-checkbox custom-control-inline>
-                                            <Field
-                                                name="academicLevel"
-                                                component="input"
-                                                type="checkbox"
-                                                value="grade"
-                                                className="custom-control-input"
-                                                id="grade"
-                                            />{' '}
-                                            <label className="custom-control-label" htmlFor="grade">
-                                                Grade
-                                            </label>
-                                                <Error name="grade" />
-                                        </div>
-                                        <div custom-control custom-checkbox custom-control-inline>
-                                            <Field
-                                                name="academicLevel"
-                                                component="input"
-                                                type="checkbox"
-                                                value="form"
-                                                className="custom-control-input"
-                                                id="form"
-                                            />
-                                            <label className="custom-control-label" htmlFor="form">
-                                                Form
-                                            </label>
-                                                <Error name="form" />
-                                        </div>
-                                        <div>
-                                            <Field name="class-level" validate={composeValidators(required, mustBeNumber, minValue(1))}>
-                                                {({ input, meta }) => (
-                                                <div>
-                                                    <input {...input} type="text" placeholder="Level" />
-                                                    {meta.error && meta.touched && <span>{meta.error}</span>}
-                                                </div>
-                                                )}
-                                            </Field>
-                                            <Error name="class-level" />
+                                    <div className="control-group mb-3">
+                                        <div className="controls span 2">
+                                            <div custom-control custom-checkbox custom-control-inline>
+                                                <Field
+                                                    name="academicLevel"
+                                                    component="input"
+                                                    type="checkbox"
+                                                    value="class"
+                                                    className="custom-control-input"
+                                                    id="class"
+                                                />{' '}
+                                                <label className="custom-control-label" htmlFor="class">
+                                                    Class
+                                                </label>
+                                                    <Error name="class" />
+                                            </div>
+                                            <div custom-control custom-checkbox custom-control-inline>
+                                                <Field
+                                                    name="academicLevel"
+                                                    component="input"
+                                                    type="checkbox"
+                                                    value="grade"
+                                                    className="custom-control-input"
+                                                    id="grade"
+                                                />{' '}
+                                                <label className="custom-control-label" htmlFor="grade">
+                                                    Grade
+                                                </label>
+                                                    <Error name="grade" />
+                                            </div>
+                                            <div custom-control custom-checkbox custom-control-inline>
+                                                <Field
+                                                    name="academicLevel"
+                                                    component="input"
+                                                    type="checkbox"
+                                                    value="form"
+                                                    className="custom-control-input"
+                                                    id="form"
+                                                />
+                                                <label className="custom-control-label" htmlFor="form">
+                                                    Form
+                                                </label>
+                                                    <Error name="form" />
+                                            </div>
+                                            <div>
+                                                <Field name="class-level" validate={composeValidators(required, mustBeNumber, minValue(1))}>
+                                                    {({ input, meta }) => (
+                                                    <div>
+                                                        <input {...input} type="text" placeholder="Level" />
+                                                        {meta.error && meta.touched && <span>{meta.error}</span>}
+                                                    </div>
+                                                    )}
+                                                </Field>
+                                                <Error name="class-level" />
+                                            </div>
                                         </div>
                                     </div>
                                 <hr />
@@ -258,7 +251,7 @@ function Register() {
                                         <Field name="other-marital-status-cause" component="textarea" placeholder="Cause of separation" />
                                     </div>
                                     <div>
-                                        <Field name="household-description" component="textarea" placeholder="Decribe the house hold and total number of members residing in the household." />
+                                        <Field name="household-description" component="textarea" placeholder="Decribe the household and total number of members residing in the household." />
                                     </div>
                                     <hr />
                                     <h4 className="section-header text-success">Household and Commmunity Relations</h4>
@@ -312,7 +305,8 @@ function Register() {
                                         <Error name="number-of-rooms" />
                                     </div>
                                         <label>Does this family posses the following services or assets? (Check all that apply)</label>
-                                        <div>
+                                        <div className="control-group">
+                                            <div className="control span2">
                                             <label>
                                                 <Field
                                                 name="possessions"
@@ -354,6 +348,24 @@ function Register() {
                                                 name="possessions"
                                                 component="input"
                                                 type="checkbox"
+                                                value="stove"
+                                                />{' '}
+                                                Stove
+                                            </label>
+                                            <label>
+                                                <Field
+                                                name="possessions"
+                                                component="input"
+                                                type="checkbox"
+                                                value="gasCooker"
+                                                />{' '}
+                                                Gas Cooker
+                                            </label>
+                                            <label>
+                                                <Field
+                                                name="possessions"
+                                                component="input"
+                                                type="checkbox"
                                                 value="electricity"
                                                 />{' '}
                                                 Electricity
@@ -367,9 +379,6 @@ function Register() {
                                                 />{' '}
                                                 Solar Lamp
                                             </label>
-                                        </div>
-                                    
-                                        <div>
                                             <label>
                                                 <Field
                                                 name="possessions"
@@ -393,28 +402,11 @@ function Register() {
                                                 name="possessions"
                                                 component="input"
                                                 type="checkbox"
-                                                value="stove"
-                                                />{' '}
-                                                Stove
-                                            </label>
-                                            <label>
-                                                <Field
-                                                name="possessions"
-                                                component="input"
-                                                type="checkbox"
-                                                value="gasCooker"
-                                                />{' '}
-                                                Gas Cooker
-                                            </label>
-                                            <label>
-                                                <Field
-                                                name="possessions"
-                                                component="input"
-                                                type="checkbox"
                                                 value="fridge"
                                                 />{' '}
                                                 Fridge
                                             </label>
+                                            </div>
                                         </div>
                                         <div>
                                             <Field name="notes" component="textarea" placeholder="Where do the children sleep? Please explain in detail." />
@@ -442,321 +434,344 @@ function Register() {
                                             <div>
                                                 <Field name="enviroment" component="select">
                                                     <option value="maintained">Well maintained</option>
-                                                    <option value="garbage">Presence of Garbage</option>
-                                                    <option value="open-sewage">Presence of open sewage and drains </option>
+                                                    <option value="garbage">Garbage</option>
+                                                    <option value="open-sewage">Open sewage & drains present</option>
                                                 </Field>
                                                 <Error name="enviroment" />
                                             </div>
                                     <hr />
                                     <h4 className="section-header text-success">Family Earners & Financial Expenditure</h4>
                                         <label>How much does the family spend on the following needs?</label>
-                                        <div>
-                                            <div>
-                                            <label>Daily Food</label>
-                                                <div>
-                                                    <Field
-                                                        name="food-cost"
-                                                        component="input"
-                                                        type="text"
-                                                        format={formatPrice}
-                                                        formatOnBlur
-                                                        placeholder="Ksh 000"
-                                                    />
+                                        <div control-group>
+                                            <div>                                            
+                                                <label>Daily Food</label>
                                                     <div>
-                                                        <Field name="food-frequency" component="select">
-                                                            <option value="daily">Daily</option>
-                                                            <option value="weekly">Weekly</option>
-                                                            <option value="monthly">Monthly</option>
-                                                        </Field>
-                                                        <Error name="frequency" />
+                                                        <Field
+                                                            name="food-cost"
+                                                            component="input"
+                                                            type="text"
+                                                            format={formatPrice}
+                                                            formatOnBlur
+                                                            placeholder="Ksh 000"
+                                                        />
+                                                        <div>
+                                                            <Field name="food-frequency" component="select">
+                                                                <option value="daily">Daily</option>
+                                                                <option value="weekly">Weekly</option>
+                                                                <option value="monthly">Monthly</option>
+                                                            </Field>
+                                                            <Error name="frequency" />
+                                                        </div>
+                                                    </div>
+                                                
+                                                <div>
+                                                <label>Rent</label>
+                                                    <div>
+                                                        <Field
+                                                            name="rent-cost"
+                                                            component="input"
+                                                            type="text"
+                                                            format={formatPrice}
+                                                            formatOnBlur
+                                                            placeholder="Ksh 000"
+                                                        />
+                                                        <div>
+                                                            <Field name="rent-frequency" component="select">
+                                                                <option value="daily">Daily</option>
+                                                                <option value="weekly">Weekly</option>
+                                                                <option value="monthly">Monthly</option>
+                                                            </Field>
+                                                            <Error name="frequency" />
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div> 
-                                            <div>
-                                            <label>Rent</label>
                                                 <div>
-                                                    <Field
-                                                        name="rent-cost"
-                                                        component="input"
-                                                        type="text"
-                                                        format={formatPrice}
-                                                        formatOnBlur
-                                                        placeholder="Ksh 000"
-                                                    />
+                                                <label>Electricity</label>
                                                     <div>
-                                                        <Field name="rent-frequency" component="select">
-                                                            <option value="daily">Daily</option>
-                                                            <option value="weekly">Weekly</option>
-                                                            <option value="monthly">Monthly</option>
-                                                        </Field>
-                                                        <Error name="frequency" />
+                                                        <Field
+                                                            name="electricity-cost"
+                                                            component="input"
+                                                            type="text"
+                                                            format={formatPrice}
+                                                            formatOnBlur
+                                                            placeholder="Ksh 000"
+                                                        />
+                                                        <div>
+                                                            <Field name="electricity-frequency" component="select">
+                                                                <option value="daily">Daily</option>
+                                                                <option value="weekly">Weekly</option>
+                                                                <option value="monthly">Monthly</option>
+                                                            </Field>
+                                                            <Error name="frequency" />
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                <div>
+                                                <label>Water</label>
+                                                    <div>
+                                                        <Field
+                                                            name="water-cost"
+                                                            component="input"
+                                                            type="text"
+                                                            format={formatPrice}
+                                                            formatOnBlur
+                                                            placeholder="Ksh 000"
+                                                        />
+                                                        <div>
+                                                            <Field name="water-frequency" component="select">
+                                                                <option value="daily">Daily</option>
+                                                                <option value="weekly">Weekly</option>
+                                                                <option value="monthly">Monthly</option>
+                                                            </Field>
+                                                            <Error name="frequency" />
+                                                        </div>
+                                                    </div>
                                             </div>
                                             <div>
-                                            <label>Electricity</label>
-                                                <div>
-                                                    <Field
-                                                        name="electricity-cost"
-                                                        component="input"
-                                                        type="text"
-                                                        format={formatPrice}
-                                                        formatOnBlur
-                                                        placeholder="Ksh 000"
-                                                    />
+                                                <label>Toilet</label>
                                                     <div>
-                                                        <Field name="electricity-frequency" component="select">
-                                                            <option value="daily">Daily</option>
-                                                            <option value="weekly">Weekly</option>
-                                                            <option value="monthly">Monthly</option>
-                                                        </Field>
-                                                        <Error name="frequency" />
+                                                        <Field
+                                                            name="toilet-cost"
+                                                            component="input"
+                                                            type="text"
+                                                            format={formatPrice}
+                                                            formatOnBlur
+                                                            placeholder="Ksh 000"
+                                                        />
+                                                        <div>
+                                                            <Field name="toilet-frequency" component="select">
+                                                                <option value="daily">Daily</option>
+                                                                <option value="weekly">Weekly</option>
+                                                                <option value="monthly">Monthly</option>
+                                                            </Field>
+                                                            <Error name="frequency" />
+                                                        </div>
                                                     </div>
-                                                </div>
+                                            </div>
+                                            <div>
+                                                <label>Medical</label>
+                                                    <div>
+                                                        <Field
+                                                            name="medical-cost"
+                                                            component="input"
+                                                            type="text"
+                                                            format={formatPrice}
+                                                            formatOnBlur
+                                                            placeholder="Ksh 000"
+                                                        />
+                                                        <div>
+                                                            <Field name="medical-frequency" component="select">
+                                                                <option value="daily">Daily</option>
+                                                                <option value="weekly">Weekly</option>
+                                                                <option value="monthly">Monthly</option>
+                                                            </Field>
+                                                            <Error name="frequency" />
+                                                        </div>
+                                                    </div>
+                                            </div>
                                             </div>
                                         </div>
-                                        <div>
-                                        <div>
-                                            <label>Water</label>
-                                                <div>
-                                                    <Field
-                                                        name="water-cost"
-                                                        component="input"
-                                                        type="text"
-                                                        format={formatPrice}
-                                                        formatOnBlur
-                                                        placeholder="Ksh 000"
-                                                    />
-                                                    <div>
-                                                        <Field name="water-frequency" component="select">
-                                                            <option value="daily">Daily</option>
-                                                            <option value="weekly">Weekly</option>
-                                                            <option value="monthly">Monthly</option>
-                                                        </Field>
-                                                        <Error name="frequency" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div>
-                                            <label>Toilet</label>
-                                                <div>
-                                                    <Field
-                                                        name="toilet-cost"
-                                                        component="input"
-                                                        type="text"
-                                                        format={formatPrice}
-                                                        formatOnBlur
-                                                        placeholder="Ksh 000"
-                                                    />
-                                                    <div>
-                                                        <Field name="toilet-frequency" component="select">
-                                                            <option value="daily">Daily</option>
-                                                            <option value="weekly">Weekly</option>
-                                                            <option value="monthly">Monthly</option>
-                                                        </Field>
-                                                        <Error name="frequency" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div>
-                                            <label>Medical</label>
-                                                <div>
-                                                    <Field
-                                                        name="medical-cost"
-                                                        component="input"
-                                                        type="text"
-                                                        format={formatPrice}
-                                                        formatOnBlur
-                                                        placeholder="Ksh 000"
-                                                    />
-                                                    <div>
-                                                        <Field name="medical-frequency" component="select">
-                                                            <option value="daily">Daily</option>
-                                                            <option value="weekly">Weekly</option>
-                                                            <option value="monthly">Monthly</option>
-                                                        </Field>
-                                                        <Error name="frequency" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+
                                         <br/>
                                         <label>List of contributors responsible of providing for the family needs.</label>
-                                        <FieldArray name="contributor">
-                                        {({ fields }) =>
-                                            fields.map((name, index) => (
-                                            <div key={name}>
-                                                <label>Cont. #{index + 1}</label>
-                                                <Field
-                                                name={`${name}.role`}
-                                                component="input"
-                                                placeholder="Role in Family"
-                                                />
-                                                <Field
-                                                name={`${name}.work`}
-                                                component="input"
-                                                placeholder="Type of Work"
-                                                />
-                                                <Field
-                                                name={`${name}.employment`}
-                                                component="input"
-                                                placeholder="Nature of Employment"
-                                                />
-                                                <Field
-                                                name={`${name}.income`}
-                                                component="input"
-                                                placeholder="Income"
-                                                />
-                                                <span
-                                                onClick={() => fields.remove(index)}
-                                                style={{ cursor: 'pointer' }}
-                                                >
-                                                ❌
-                                                </span>
+                                        <div className="control-group">
+                                            <div className="controls span2">
+                                                <FieldArray name="contributor">
+                                                {({ fields }) =>
+                                                fields.map((name, index) => (
+                                                <div key={name}>
+                                                    <label>Cont. #{index + 1}</label>
+                                                    <br/>
+                                                    <Field
+                                                    name={`${name}.role`}
+                                                    component="input"
+                                                    placeholder="Role in Family"
+                                                    />
+                                                    <br/>
+                                                    <Field
+                                                    name={`${name}.work`}
+                                                    component="input"
+                                                    placeholder="Type of Work"
+                                                    />
+                                                    <br/>
+                                                    <Field
+                                                    name={`${name}.employment`}
+                                                    component="input"
+                                                    placeholder="Nature of Employment"
+                                                    />
+                                                    <br/>
+                                                    <Field
+                                                    name={`${name}.income`}
+                                                    component="input"
+                                                    placeholder="Income"
+                                                    />
+                                                    <span
+                                                    onClick={() => fields.remove(index)}
+                                                    style={{ cursor: 'pointer' }}
+                                                    >
+                                                    ❌
+                                                    </span>
+                                                </div>
+                                                ))
+                                                }
+                                                </FieldArray> 
+                                            <div className="buttons">
+                                            <button className="buttons mt-3"
+                                                type="button"
+                                                onClick={() => push('contributor', undefined)}
+                                            >
+                                                Add Contributor
+                                            </button>
+                                            <br/>
+                                            <button className="buttons mt-3" 
+                                                type="button" 
+                                                onClick={() => pop('contributor')}>
+                                                Remove Contributor
+                                            </button>
                                             </div>
-                                            ))
-                                        }
-                                        </FieldArray>
-                                        <div className="buttons">
-                                        <button
-                                            type="button"
-                                            onClick={() => push('contributor', undefined)}
-                                        >
-                                            Add Contributor
-                                        </button>
-                                        <button type="button" onClick={() => pop('contributor')}>
-                                            Remove Contributor
-                                        </button>
-                                        </div>
                                         <br/>
+                                            </div>
+                                        </div>
                                     <div>
                                         <Field name="addtional-skills" component="textarea" placeholder="Note any additional skills of the family earners" />
                                     </div>
                                         <br/>
                                         <label>When the family is in need, where do they go for help (Check all that apply)</label>
-                                        <div>
-                                            <label>
-                                                <Field
-                                                name="possessions"
-                                                component="input"
-                                                type="checkbox"
-                                                value="bed"
-                                                />{' '}
-                                                Family
-                                            </label>
-                                            <label>
-                                                <Field
-                                                name="possessions"
-                                                component="input"
-                                                type="checkbox"
-                                                value="matteress"
-                                                />{' '}
-                                                Mosque
-                                            </label>
-                                            <label>
-                                                <Field
-                                                name="possessions"
-                                                component="input"
-                                                type="checkbox"
-                                                value="matteress"
-                                                />{' '}
-                                                Church
-                                            </label>
-                                            <label>
-                                                <Field
-                                                name="possessions"
-                                                component="input"
-                                                type="checkbox"
-                                                value="beddings"
-                                                />{' '}
-                                                Sacco
-                                            </label>
-                                            <label>
-                                                <Field
-                                                name="possessions"
-                                                component="input"
-                                                type="checkbox"
-                                                value="furniture"
-                                                />{' '}
-                                                Chama
-                                            </label>
-                                            <label>
-                                                <Field
-                                                name="possessions"
-                                                component="input"
-                                                type="checkbox"
-                                                value="electricity"
-                                                />{' '}
-                                                Bank
-                                            </label>
-                                            <label>
-                                                <Field
-                                                name="possessions"
-                                                component="input"
-                                                type="checkbox"
-                                                value="solarlamp"
-                                                />{' '}
-                                                Chief
-                                            </label>
-                                            <label>
-                                                <Field
-                                                name="possessions"
-                                                component="input"
-                                                type="checkbox"
-                                                value="solarlamp"
-                                                />{' '}
-                                                None
-                                            </label>
+                                        <div className="control-group">
+                                            <div className="controls span2">
+                                                <label>
+                                                    <Field
+                                                    name="possessions"
+                                                    component="input"
+                                                    type="checkbox"
+                                                    value="bed"
+                                                    />{' '}
+                                                    Family
+                                                </label>
+                                                <label>
+                                                    <Field
+                                                    name="possessions"
+                                                    component="input"
+                                                    type="checkbox"
+                                                    value="matteress"
+                                                    />{' '}
+                                                    Mosque
+                                                </label>
+                                                <label>
+                                                    <Field
+                                                    name="possessions"
+                                                    component="input"
+                                                    type="checkbox"
+                                                    value="matteress"
+                                                    />{' '}
+                                                    Church
+                                                </label>
+                                                <label>
+                                                    <Field
+                                                    name="possessions"
+                                                    component="input"
+                                                    type="checkbox"
+                                                    value="beddings"
+                                                    />{' '}
+                                                    Sacco
+                                                </label>
+                                                <label>
+                                                    <Field
+                                                    name="possessions"
+                                                    component="input"
+                                                    type="checkbox"
+                                                    value="furniture"
+                                                    />{' '}
+                                                    Chama
+                                                </label>
+                                                <label>
+                                                    <Field
+                                                    name="possessions"
+                                                    component="input"
+                                                    type="checkbox"
+                                                    value="electricity"
+                                                    />{' '}
+                                                    Bank
+                                                </label>
+                                                <label>
+                                                    <Field
+                                                    name="possessions"
+                                                    component="input"
+                                                    type="checkbox"
+                                                    value="solarlamp"
+                                                    />{' '}
+                                                    Chief
+                                                </label>
+                                                <label>
+                                                    <Field
+                                                    name="possessions"
+                                                    component="input"
+                                                    type="checkbox"
+                                                    value="solarlamp"
+                                                    />{' '}
+                                                    None
+                                                </label>
+                                            </div>
                                         </div>
                                     <hr />
                                     <h4 className="section-header text-success">Physical Health</h4>
                                     <label>List the family members with medical conditions including allergies and disabilities</label>
-                                        <FieldArray name="family">
-                                        {({ fields }) =>
-                                            fields.map((family, index) => (
-                                            <div key={family}>
-                                                <label>Fam. #{index + 1}</label>
-                                                <Field
-                                                name={`${family}.name`}
-                                                component="input"
-                                                placeholder="Name"
-                                                />
-                                                <Field
-                                                name={`${family}.relationship`}
-                                                component="input"
-                                                placeholder="Relationship"
-                                                />
-                                                <Field
-                                                name={`${family}.medical`}
-                                                component="input"
-                                                placeholder="Medical Concern"
-                                                />
-                                                <Field
-                                                name={`${family}.treatment`}
-                                                component="input"
-                                                placeholder="Treatment Status"
-                                                />
-                                                <span
-                                                onClick={() => fields.remove(index)}
-                                                style={{ cursor: 'pointer' }}
-                                                >
-                                                ❌
-                                                </span>
+                                    <div className="control-group">
+                                        <div className="controls span2">
+                                            <FieldArray name="family">
+                                            {({ fields }) =>
+                                                fields.map((family, index) => (
+                                                <div key={family}>
+                                                    <label>Fam. #{index + 1}</label>
+                                                    <br/>
+                                                    <Field
+                                                    name={`${family}.name`}
+                                                    component="input"
+                                                    placeholder="Name"
+                                                    />
+                                                    <br/>
+                                                    <Field
+                                                    name={`${family}.relationship`}
+                                                    component="input"
+                                                    placeholder="Relationship"
+                                                    />
+                                                    <br/>
+                                                    <Field
+                                                    name={`${family}.medical`}
+                                                    component="input"
+                                                    placeholder="Medical Concern"
+                                                    />
+                                                    <br/>
+                                                    <Field
+                                                    name={`${family}.treatment`}
+                                                    component="input"
+                                                    placeholder="Treatment Status"
+                                                    />
+                                                    <span
+                                                    onClick={() => fields.remove(index)}
+                                                    style={{ cursor: 'pointer' }}
+                                                    >
+                                                    ❌
+                                                    </span>
+                                                </div>
+                                                ))
+                                            }
+                                            </FieldArray>
+                                            <div>
+                                            <button className="buttons mt-3"
+                                                type="button"
+                                                onClick={() => push('family', undefined)}
+                                            >
+                                                Add Family Member
+                                            </button>
+                                            <br/>
+                                            <button className="buttons mt-3"
+                                                type="button" onClick={() => pop('family')}>
+                                                Remove Family Member
+                                            </button>
                                             </div>
-                                            ))
-                                        }
-                                        </FieldArray>
-                                        <div className="buttons">
-                                        <button
-                                            type="button"
-                                            onClick={() => push('family', undefined)}
-                                        >
-                                            Add Family Member
-                                        </button>
-                                        <button type="button" onClick={() => pop('family')}>
-                                            Remove Family Member
-                                        </button>
                                         </div>
+                                    </div>
                                         <br/>
                                             <label>Does the family have a medical cover? (NHIF) If no kindly advice on the importance of it (CONDITIONAL)</label>
                                             <div>
@@ -799,46 +814,47 @@ function Register() {
                                         <label>As a concerned parent which actions do you take concerning the above behavior/reactions/traits?</label>
                                         <br/>
                                         <br/>
-                                            <label>
-                                                <Field
-                                                name="silence"
-                                                component="input"
-                                                type="checkbox"
-                                                value="silence"
-                                                />{' '}
-                                                I keep silent and assume nothing happens
-                                            </label>
-                                        
-                                            <label>
-                                                <Field
-                                                name="react"
-                                                component="input"
-                                                type="checkbox"
-                                                value="react"
-                                                />{' '}
-                                                I react and fight back most of the time (quarrel)
-                                            </label>
-                                            <label>
-                                                <Field
-                                                name="report-police"
-                                                component="input"
-                                                type="checkbox"
-                                                value="police"
-                                                />{' '}
-                                                I report him/her to the police
-                                            </label>
-                                        
-                                            <label>
-                                                <Field
-                                                name="report-church"
-                                                component="input"
-                                                type="checkbox"
-                                                value="church"
-                                                />{' '}
-                                                I report him/her to the church/ village leaders
-                                            </label>
-                                            <br/>
-                                            <br/>
+                                        <div className="control-group">
+                                            <div className="controls span2">
+                                                <label>
+                                                    <Field
+                                                    name="silence"
+                                                    component="input"
+                                                    type="checkbox"
+                                                    value="silence"
+                                                    />{' '}
+                                                    I keep silent and assume nothing happens
+                                                </label>
+                                                <label>
+                                                    <Field
+                                                    name="react"
+                                                    component="input"
+                                                    type="checkbox"
+                                                    value="react"
+                                                    />{' '}
+                                                    I react and fight back most of the time (quarrel)
+                                                </label>
+                                                <label>
+                                                    <Field
+                                                    name="report-police"
+                                                    component="input"
+                                                    type="checkbox"
+                                                    value="police"
+                                                    />{' '}
+                                                    I report him/her to the police
+                                                </label>
+                                                <label>
+                                                    <Field
+                                                    name="report-church"
+                                                    component="input"
+                                                    type="checkbox"
+                                                    value="church"
+                                                    />{' '}
+                                                    I report him/her to the church/ village leaders
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <br/>
                                         <div>
                                             <Field name="family-relationship" component="textarea" 
                                             placeholder="In general how is the family relationship?" 
@@ -853,66 +869,65 @@ function Register() {
                                             />
                                         </div>
                                         <label>What type/form of child abuse is most common within your community?(Check all that apply)</label>
-                                        <div>
-                                            <label>
-                                                <Field
-                                                name="physical"
-                                                component="input"
-                                                type="checkbox"
-                                                value="physical"
-                                                />{' '}
-                                                Physical
-                                            </label>
-                                            <label>
-                                                <Field
-                                                name="sexual"
-                                                component="input"
-                                                type="checkbox"
-                                                value="sexual"
-                                                />{' '}
-                                                Sexual
-                                            </label>
+                                        <div className="control-group">
+                                            <div className="controls span2">
+                                                    <label>
+                                                        <Field
+                                                        name="physical"
+                                                        component="input"
+                                                        type="checkbox"
+                                                        value="physical"
+                                                        />{' '}
+                                                        Physical
+                                                    </label>
+                                                    <label>
+                                                        <Field
+                                                        name="sexual"
+                                                        component="input"
+                                                        type="checkbox"
+                                                        value="sexual"
+                                                        />{' '}
+                                                        Sexual
+                                                    </label>
+                                                    <label>
+                                                        <Field
+                                                        name="negligence"
+                                                        component="input"
+                                                        type="checkbox"
+                                                        value="negligence"
+                                                        />{' '}
+                                                        Negligence
+                                                    </label>
+                                                    <label>
+                                                        <Field
+                                                        name="emotional"
+                                                        component="input"
+                                                        type="checkbox"
+                                                        value="emotional"
+                                                        />{' '}
+                                                        Emotional
+                                                    </label>
+                                                    <label>
+                                                        <Field
+                                                        name="other"
+                                                        component="input"
+                                                        type="checkbox"
+                                                        value="other"
+                                                        />{' '}
+                                                        Other
+                                                    </label>
+                                                    <label>
+                                                        <Field
+                                                        name="none"
+                                                        component="input"
+                                                        type="checkbox"
+                                                        value="none"
+                                                        />{' '}
+                                                        None
+                                                    </label>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <label>
-                                                <Field
-                                                name="negligence"
-                                                component="input"
-                                                type="checkbox"
-                                                value="negligence"
-                                                />{' '}
-                                                Negligence
-                                            </label>
-                                            <label>
-                                                <Field
-                                                name="emotional"
-                                                component="input"
-                                                type="checkbox"
-                                                value="emotional"
-                                                />{' '}
-                                                Emotional
-                                            </label>
-                                        </div>
-                                        <div>
-                                            <label>
-                                                <Field
-                                                name="other"
-                                                component="input"
-                                                type="checkbox"
-                                                value="other"
-                                                />{' '}
-                                                Other
-                                            </label>
-                                            <label>
-                                                <Field
-                                                name="none"
-                                                component="input"
-                                                type="checkbox"
-                                                value="none"
-                                                />{' '}
-                                                None
-                                            </label>
-                                        </div>
+
                                         <div>
                                             <Field name="abuse-others" component="textarea" 
                                             placeholder="If response to the question is other - please explain" 
@@ -948,46 +963,55 @@ function Register() {
                                         </div> 
                                     <hr />
                                     <h4 className="section-header text-success">Beneficiaries who are SRF members</h4>
-                                        <FieldArray name="beneficiary">
-                                        {({ fields }) =>
-                                            fields.map(( beneficiary, index) => (
-                                            <div key={beneficiary}>
-                                                <label>Bene. #{index + 1}</label>
-                                                <Field
-                                                name={`${beneficiary}.name`}
-                                                component="input"
-                                                placeholder="Name"
-                                                />
-                                                <Field
-                                                name={`${beneficiary}.entry-year`}
-                                                component="input"
-                                                placeholder="Year of Entry"
-                                                />
-                                                <Field
-                                                name={`${beneficiary}.membership`}
-                                                component="input"
-                                                placeholder="Membership Status"
-                                                />
-                                                <span
-                                                onClick={() => fields.remove(index)}
-                                                style={{ cursor: 'pointer' }}
-                                                >
-                                                ❌
-                                                </span>
+                                    <div className="control-group">
+                                        <div classname="controls span2">
+                                            <FieldArray name="beneficiary">
+                                            {({ fields }) =>
+                                                fields.map(( beneficiary, index) => (
+                                                <div key={beneficiary}>
+                                                    <label>Bene. #{index + 1}</label>
+                                                    <br/>
+                                                    <Field
+                                                    name={`${beneficiary}.name`}
+                                                    component="input"
+                                                    placeholder="Name"
+                                                    />
+                                                    <br/>
+                                                    <Field
+                                                    name={`${beneficiary}.entry-year`}
+                                                    component="input"
+                                                    placeholder="Year of Entry"
+                                                    />
+                                                    <br/>
+                                                    <Field
+                                                    name={`${beneficiary}.membership`}
+                                                    component="input"
+                                                    placeholder="Membership Status"
+                                                    />
+                                                    <span
+                                                    onClick={() => fields.remove(index)}
+                                                    style={{ cursor: 'pointer' }}
+                                                    >
+                                                    ❌
+                                                    </span>
+                                                </div>
+                                                ))
+                                            }
+                                            </FieldArray>
+                                                <div className="buttons">
+                                                    <button className="buttons mt-3"
+                                                        type="button"
+                                                        onClick={() => push('beneficiary', undefined)}
+                                                    >
+                                                        Add Beneficiary
+                                                    </button>
+                                                    <br/>
+                                                    <button className="buttons mt-3"
+                                                        type="button" onClick={() => pop('beneficiary')}>
+                                                        Remove Beneficiary
+                                                    </button>
+                                                </div>
                                             </div>
-                                            ))
-                                        }
-                                        </FieldArray>
-                                        <div className="buttons">
-                                        <button
-                                            type="button"
-                                            onClick={() => push('beneficiary', undefined)}
-                                        >
-                                            Add Beneficiary
-                                        </button>
-                                        <button type="button" onClick={() => pop('beneficiary')}>
-                                            Remove Beneficiary
-                                        </button>
                                         </div>
                                         <br/>
                                     <hr />
@@ -1060,34 +1084,36 @@ function Register() {
                                         />
                                     </div>
                                     <label>Scale the family and to give the necessary recommendations</label>
-                                        <div>
-                                            <label>
-                                                <Field
-                                                name="l-vulnerable"
-                                                component="input"
-                                                type="checkbox"
-                                                value="l-vulnerable"
-                                                />{' '}
-                                                Least Vulnerable
-                                            </label>
-                                            <label>
-                                                <Field
-                                                name="vulnerable"
-                                                component="input"
-                                                type="checkbox"
-                                                value="vulnerable"
-                                                />{' '}
-                                                Vulnerable
-                                            </label>
-                                            <label>
-                                                <Field
-                                                name="h-vulnerable"
-                                                component="input"
-                                                type="checkbox"
-                                                value="h-vulnerable"
-                                                />{' '}
-                                                Highly Vulnerable
-                                            </label>
+                                        <div className="control-group">
+                                            <div className="controls span2">
+                                                <label>
+                                                    <Field
+                                                    name="l-vulnerable"
+                                                    component="input"
+                                                    type="checkbox"
+                                                    value="l-vulnerable"
+                                                    />{' '}
+                                                    Least Vulnerable
+                                                </label>
+                                                <label>
+                                                    <Field
+                                                    name="vulnerable"
+                                                    component="input"
+                                                    type="checkbox"
+                                                    value="vulnerable"
+                                                    />{' '}
+                                                    Vulnerable
+                                                </label>
+                                                <label>
+                                                    <Field
+                                                    name="h-vulnerable"
+                                                    component="input"
+                                                    type="checkbox"
+                                                    value="h-vulnerable"
+                                                    />{' '}
+                                                    Highly Vulnerable
+                                                </label>
+                                            </div>
                                         </div>
                                     <div>
                                         <Field name="recommendations" component="textarea" 

@@ -62,15 +62,6 @@ function Signup() {
             <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h3 className="h3 text-success">Sign Up</h3>
-                    <div className="btn-toolbar mb-2 mb-md-0">
-                    <div className="btn-group me-2">
-                        <button type="button" className="btn btn-sm btn-outline-success px-4">Edit</button>
-                    </div>
-                        <button type="button" className="btn btn-sm btn-outline-success px-4">
-                                <span data-feather="calendar"></span>
-                                Save
-                        </button>
-                    </div>
                 </div>
                 <div className="container">
                     <Styles>
@@ -163,26 +154,24 @@ function Signup() {
                                     <label>Clinic</label>
                                     <div>
                                     <Field name="clinic" component="select">
-                                        <option />
-                                        <option value="father">Father</option>
-                                        <option value="mother">Mother</option>
-                                        <option value="guardian">Guardian</option>
-                                        <option value="guardian">Guardian</option>
-                                        <option value="father">Father</option>
-                                        <option value="mother">Mother</option>
-                                        <option value="guardian">Guardian</option>
+                                        <option value="eastlands">Eastlands</option>
+                                        <option value="kangemi">Kangemi</option>
+                                        <option value="kibera">Kibera</option>
+                                        <option value="korogocho">Korogocho</option>
+                                        <option value="mathare">Mathare</option>
+                                        <option value="ngewe">Ngewe</option>
+                                        <option value="tatucity">Tatu City</option>
                                     </Field>
                                     <Error name="clinic" />
                                     </div>
                                     <label>Team</label>
                                     <div>
                                     <Field name="team" component="select">
-                                        <option />
-                                        <option value="father">Father</option>
-                                        <option value="mother">Mother</option>
-                                        <option value="guardian">Guardian</option>
-                                        <option value="mother">Mother</option>
-                                        <option value="guardian">Guardian</option>
+                                        <option value="Under10s">Under 10s</option>
+                                        <option value="Under12s">Under 12s</option>
+                                        <option value="under16s">Under 16s</option>
+                                        <option value="junior">Junior</option>
+                                        <option value="senior">Senior</option>
                                     </Field>
                                     <Error name="team" />
                                     </div>
