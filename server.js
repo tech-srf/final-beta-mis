@@ -1,6 +1,8 @@
 const express = require('express');
 const connectDB = require('./config/db')
-// const cors = require('cors')
+const mongoose = require ('mongoose')
+const bodyParser = require ('body-parser')
+const cors = require('cors')
 
 
 // // Routes
@@ -24,9 +26,13 @@ connectDB();
 
 
 //BodyParser Middleware
-// app.use(cors());
-app.use(express.json({ extended: false }));
 
+app.use(express.json({ extended: false }));
+app.use(bodyParser.json({ limit: "30mb", extended: true }));
+app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+app.use(cors());
+
+const CONNECTION_URL = 'mongodb+srv://chep123:dmWUWDgbK8Fn39Cr@cluster0.21fq4.mongodb.net/?retryWrites=true&w=majority'
 
 //Define routes
 app.use('/api/users', require('./routes/api/users'));

@@ -349,11 +349,9 @@ const RegisterSchema = new Schema ({
             required: true,
         }
     }],
-
     uploads:[{
-        
+        selectedFile: String,
     }]
-
 });
 
 module.exports = mongoose.model('Register', RegisterSchema)
