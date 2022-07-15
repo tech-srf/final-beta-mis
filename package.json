@@ -1,12 +1,13 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "SRF MIS Backend",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server",
-    "server": "nodemon server",
-    "client": "npm start --prefix client"
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "nashthedev",
   "license": "MIT",
@@ -15,6 +16,7 @@
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
+    "colors": "^1.4.0",
     "config": "^3.3.7",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",

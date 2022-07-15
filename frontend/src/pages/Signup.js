@@ -4,7 +4,7 @@ import FormContainer  from '../components/FormContainer'
 import { Form, Col  } from 'react-bootstrap'
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
-import { Typeahead } from 'react-bootstrap-typeahead'
+// import { Typeahead } from 'react-bootstrap-typeahead'
 import { Fragment } from 'react'
 
 

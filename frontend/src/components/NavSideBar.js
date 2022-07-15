@@ -10,12 +10,13 @@ function NavSideBar() {
                     <img src={Logo} alt="" width="150" height="57" />
                 </a>
                 <button className="navbar-toggler position-absolute d-md-none collapsed mt-3" 
-                        type="button" 
-                        data-bs-toggle="collapse" 
-                        data-bs-target="#sidebarMenu" 
-                        aria-controls="sidebarMenu" 
-                        aria-expanded="false" 
-                        aria-label="Toggle navigation">
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#sidebarMenu" 
+                    aria-controls="sidebarMenu" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation"
+                >
                     <span className="navbar-toggler-icon-success"></span>
                 </button>
             </header>

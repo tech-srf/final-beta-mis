@@ -1,5 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Card, Container } from 'react-bootstrap'
+import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import { login, reset } from '../../features/auth/authSlice'
+import Spinner from '../../components/Spinner'
 import Logo from "../../assets/img/logo.png"
 import { Link } from 'react-router-dom'
 
@@ -12,11 +17,47 @@ const Login = () => {
 
 const { email, password } = formData;
 
-const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+const navigate = useNavigate()
+const dispatch = useDispatch()
 
-const onSubmit = async (e) => {
-    e.preventDefault();
-    console.log('SUCCESS!')
+
+
+const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+)
+
+    useEffect(() => {
+        if (isError) {
+        toast.error(message)
+        }
+
+        if (isSuccess || user) {
+        navigate('/')
+        }
+
+    dispatch(reset())
+    }, [user, isError, isSuccess, message, navigate, dispatch])
+
+    const onChange = (e) => {
+        setFormData((prevState) => ({
+        ...prevState,
+        [e.target.name]: e.target.value,
+        }))
+    }
+
+    const onSubmit = (e) => {
+        e.preventDefault()
+
+        const userData = {
+        email,
+        password,
+        }
+
+        dispatch(login(userData))
+    }
+
+    if (isLoading) {
+        return <Spinner />
 };
 
     return (
@@ -30,7 +71,7 @@ const onSubmit = async (e) => {
                                     <img className="img mb-3" src={Logo} alt=""/>
                                     <h1 className="h3 mb-3 fw-stong">Login</h1>
                                 </div>
-                                <form className="form cardBody mt-5" onSubmit={e => onSubmit(e)}>
+                                <form className="form cardBody mt-5" onSubmit={onSubmit}>
                                     <div className="formFloating  mb-3">
                                         <input 
                                             type="email" 
@@ -38,7 +79,7 @@ const onSubmit = async (e) => {
                                             id="floatingInput"
                                             name="email"
                                             value={email}
-                                            onChange={e => onChange(e)} 
+                                            onChange={onChange} 
                                             placeholder="name@example.com" 
                                             required
                                         />
@@ -50,7 +91,7 @@ const onSubmit = async (e) => {
                                             id="floatingPassword"
                                             name="password"
                                             value={password}
-                                            onChange={e => onChange(e)}
+                                            onChange={onChange}
                                             minLength="8" 
                                             placeholder="Password" />
                                     </div>
