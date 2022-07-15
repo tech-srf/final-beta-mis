@@ -78,4 +78,22 @@ router.delete('/:id', async(req, res) => {
     }
 });
 
+
+// @routes POST api/counseling/comment/:id
+// @desc Comment on a conseslling session.
+
+router.post('/', async(req, res) => {
+    const newCounseling = new Counseling(req.body);
+
+    try {
+        const counseling = await newCounseling.save();
+        if(!counseling) throw Error('Something went wrong with recording a couseling session');
+
+        res.status(200).json(counseling);
+    }   catch(err) {
+        res.status(400).json({msg: err})
+    
+    }
+});
+
 module.exports = router;
